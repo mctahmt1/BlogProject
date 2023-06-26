@@ -74,7 +74,7 @@ namespace BlogProject.Data.Mappings
                 SecurityStamp = Guid.NewGuid().ToString(),
                 ImageId = Guid.Parse("F7DFBBF2-BAC9-47F6-8671-DC3D5D2085B0")
             };
-            admin.PasswordHash = CreatePasswordHash(superadmin, "123456");
+            admin.PasswordHash = CreatePasswordHash(admin, "123456");
             builder.HasData(superadmin, admin);
         }
         private string CreatePasswordHash(AppUser user, string password)

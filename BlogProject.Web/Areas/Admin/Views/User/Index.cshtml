@@ -1,0 +1,53 @@
+﻿@model List<UserDto>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+        <span class="text-muted fw-light">Kullanıcı Yönetimi /</span> Kullanıcılar
+    </h4>
+
+    <div class="card">
+        <div class="table-responsive text-nowrap m-5">
+            <div class="d-flex justify-content-end mb-3">
+                <a class="btn btn btn-outline-dark mb-3" asp-area="Admin" asp-controller="User" asp-action="Add">
+                    Kullanıcı Ekle <i class="bx bx-plus"></i>
+                </a>
+            </div>
+            <table class="table table-bordered" id="userTables" width="100%" collspacing="0">
+                <thead>
+                    <tr>
+                        <th>İSİM</th>
+                        <th>SOYİSİM</th>
+                        <th>E-MAİL</th>
+                        <th>TELEFON NUMARASI</th>
+                        <th>ROL</th>
+                        <th>E-MAİL DOĞRULAMASI</th>
+                        <th>BAĞLANTI HATALARI</th>
+                        <th>İŞLEMLER </th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    @foreach (var user in Model)
+                    {
+                        <tr name="@user.Id">
+                            <td title="@user.FirstName">@user.FirstName</td>
+                            <td>@user.LastName</td>
+                            <td>@user.Email</td>
+                            <td>@user.PhoneNumber</td>
+                            <td>@user.Role</td>
+                            <td>@(user.EmailConfirmed ? "Doğrulandı" : "Doğrulanmadı")</td>
+                            <td class="layout-demo-info">@user.AccessFailedCount</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" data-id="@user.Id" asp-area="Admin" asp-controller="User" asp-action="Update" asp-route-userId="@user.Id"><i class="bx bxs-edit"></i></a>
+                                <a class="btn btn-danger btn-sm" data-id="@user.Id" asp-area="Admin" asp-controller="User" asp-action="Delete" asp-route-userId="@user.Id"><i class="bx bxs-minus-circle"></i></a>
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/userindex.js"></script>
+}

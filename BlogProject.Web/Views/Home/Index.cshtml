@@ -9,6 +9,7 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<a class="btn btn-danger btn-sm" href="/Admin">Admine git</a>
 <table>
     @foreach(var article in Model)
     {
@@ -20,7 +21,7 @@
     <tr>
             <td>@article.Title</td>
             <td>@article.Content.Substring(0,30)</td>
-            <td>@article.CreatedBy</td>
+            <td>@article.CreatedDate</td>
     </tr>
     }
 </table>

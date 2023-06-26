@@ -1,6 +1,9 @@
-﻿using BlogProject.Service.Services.Abstracts;
+﻿using BlogProject.Entity.Entities;
+using BlogProject.Service.Services.Abstracts;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BlogProject.Web.Areas.Admin.Controllers
 {
@@ -16,7 +19,9 @@ namespace BlogProject.Web.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var articles= await articleService.GetAllArticleAsync();
+            var articles = await articleService.GetAllArticlesWithCategoryNonDeletedAsync();
+            
+
             return View(articles);
         }
     }

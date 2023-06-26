@@ -10,6 +10,9 @@ namespace BlogProject.Service.AutoMapper.Articles
         {
             //ArticleDto istersek bize Article ile map işlemi yapacak, Article istersekte tam tersini yapacak.
             CreateMap<ArticleDto, Article>().ReverseMap();
+            CreateMap<ArticleUpdateDto, Article>().ReverseMap();
+            CreateMap<ArticleUpdateDto, ArticleDto>().ReverseMap();
+            CreateMap<ArticleAddDto, Article>().ReverseMap(); 
         }
     }
 }

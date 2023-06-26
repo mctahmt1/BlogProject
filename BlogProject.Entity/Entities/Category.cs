@@ -4,7 +4,18 @@ namespace BlogProject.Entity.Entities
 {
     public class Category : EntityBase
     {
+        public Category()
+        {
+
+        }
+        public Category(string name, string description,string createdBy)
+        {
+            Name = name;
+            Description = description;
+            CreatedBy = createdBy;
+        }
         public string Name { get; set; }
+        public string Description { get; set; }
         public ICollection<Article> Articles { get; set; }
     }
 }

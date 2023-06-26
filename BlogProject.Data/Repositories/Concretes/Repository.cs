@@ -17,8 +17,7 @@ namespace BlogProject.Data.Repositories.Concretes
         // Tüm metodlarda Dbcontexti set etmek yerine burada Table adında bir metod oluşturuyoruz.
         private DbSet<T> Table { get => dbContext.Set<T>(); } 
 
-        //Expression<Func<T,bool>> predicate = null = Burada bir fonksiyon oluşturacağımızı metoda bildiriyoruz ve bu fonksiyona bir entity değeri verip buradan Boolean bir değer
-        //dönmesini istiyoruz,Where komutu yazmak için.2.params Expression<Func<T, object>>[] includeProperties = Params isminde tekrar expression oluşturmak için seçenek ekliyoruz ve bize obje döndürmesini sağlıyoruz, include ile başka bir entityden bize değer döndermesini sağlayacağız.
+        //Expression<Func<T,bool>> predicate = null = Burada bir fonksiyon oluşturacağımızı metoda bildiriyoruz ve bu fonksiyona bir entity değeri verip buradan Boolean bir değer dönmesini istiyoruz,Where komutu yazmak için.2.params Expression<Func<T, object>>[] includeProperties = Params isminde tekrar expression oluşturmak için seçenek ekliyoruz ve bize obje döndürmesini sağlıyoruz, include ile başka bir entityden bize değer döndermesini sağlayacağız.
         public async Task<List<T>> GetAllAsync(Expression<Func<T,bool>> predicate = null,params Expression<Func<T, object>>[] includeProperties)
         {
             IQueryable<T> query = Table;
