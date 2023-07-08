@@ -63,8 +63,10 @@ namespace BlogProject.Service.Services.Concrete
 
             if(articleUpdateDto.Photo != null)
             {
-                if(article.Image.FileName != null)
+                if(article.Image != null && article.Image.FileName != null)
+                {
                     imageHelper.Delete(article.Image.FileName);
+                }
                 else
                 {
                     var imageUpload = await imageHelper.Upload(articleUpdateDto.Title, articleUpdateDto.Photo, ImageType.Post);
@@ -74,9 +76,7 @@ namespace BlogProject.Service.Services.Concrete
                 }
             }
             mapper.Map(articleUpdateDto, article);
-            //article.Title = articleUpdateDto.Title;
-            //article.Content = articleUpdateDto.Content;
-            //article.CategoryId = articleUpdateDto.CategoryId;
+            
             article.ModifiedDate = DateTime.Now;
             article.ModifiedBy = useremail;
 
