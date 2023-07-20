@@ -1,49 +1,252 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BlogProject.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BlogProject.Web.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BlogProject.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+﻿@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zxx">
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - BlogProject.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+<head>
+	<title>Anasayfa</title>
+	<link rel="icon" type="image/x-icon" href="~/admin/assets/img/favicon/macit.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="~/uitemplate/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="~/uitemplate/css/single.css">
+	<link href="~/uitemplate/css/style.css" rel='stylesheet' type='text/css' />
+	<link href="~/uitemplate/css/fontawesome-all.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+		  rel="stylesheet">
+</head>
+
+<body>
+	<!--Header-->
+
+	<header>
+		<div class="top-bar_sub_w3layouts container-fluid">
+			<div class="row">
+				<div class="col-md-4 logo text-left">
+					<a class="navbar-brand" href="/Writer/Index/">
+						<i class="fab fa-linode"></i> mct Blog
+					</a>
+				</div>
+				<div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+					<span>Hoşgeldiniz...</span>
+					<span class="mx-lg-4 mx-md-2  mx-1">
+						<a href="/Login/Index/">
+							<i class="fas fa-lock"></i> Giriş Yap
+						</a>
+					</span>
+					<span>
+						<a href="/RegisterUser/Index/">
+							<i class="far fa-user"></i> Kayıt Ol
+						</a>
+					</span>
+				</div>
+				<div class="col-md-4 log-icons text-right">
+					<ul class="social_list1 mt-3">
+						<li>
+							<a href="#" class="facebook1 mx-2">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="twitter2">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="dribble3 mx-2">
+								<i class="fab fa-dribbble"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="pin">
+								<i class="fab fa-pinterest-p"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header_top" id="home">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/Blog/Index/">
+								Ana Sayfa
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/About/Index/">Hakkımızda</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/Blog/Index/">Bloglar</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/Contact/Index/">İletişim</a>
+						</li>
+
+
+					</ul>
+					<form action="#" method="post" class="form-inline my-2 my-lg-0 header-search">
+						<input class="form-control mr-sm-2" type="search" placeholder="Aranacak kelime..." name="Search" required="">
+						<button class="btn btn1 my-2 my-sm-0" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</form>
+
+
+
+				</div>
+			</nav>
+
+		</div>
+
+	</header>
+	@RenderBody()
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+					<h3>Hakkımızda</h3>
+					<p>Blog, bireylerin veya organizasyonların düşüncelerini, fikirlerini, deneyimlerini veya diğer içerik türlerini ters kronolojik bir sırayla yayınlayabilecekleri bir çevrimiçi platformdur."Blog" kelimesi "web günlüğü"nün kısaltmasıdır. Bloglar kişisel deneyimler, haberler, siyaset, eğlence, moda, yemek, seyahat gibi geniş bir konu yelpazesini kapsayabilir. İçerik genellikle tek bir yazar veya yazar grubu tarafından yazılır ve okuyucular yazar ve diğer okuyucularla yorum bırakarak ve tartışarak etkileşime geçebilirler.</p>
+					<div class="read">
+						<a href="/About/Index/" class="btn btn-primary read-m">Devamını Oku</a>
+					</div>
+				</div>
+				<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+					<div class="tech-btm">
+						<h3>Son Bloglar</h3>
+						
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="#">
+										<img src="~/uitemplate/images/1.jpg" class="card-img-top img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="/Blog/BlogReadAll/">Burası ne bilmiyorum</a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> @((DateTime.Now.Year).ToString("dd-MMM-yyyy"))
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+					</div>
+				</div>
+				<!-- subscribe -->
+				<div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
+					<h2>Mail Bültenine Abone Olun</h2>
+					@await Html.PartialAsync("~/Views/Home/SubscribeMail.cshtml")
+					<!-- //subscribe -->
+				</div>
+			</div>
+			<!-- footer -->
+			<div class="footer-cpy text-center">
+				<div class="footer-social">
+					<div class="copyrighttop">
+						<ul>
+							<li class="mx-3">
+								<a class="facebook" href="#">
+									<i class="fab fa-facebook-f"></i>
+									<span>Facebook</span>
+								</a>
+							</li>
+							<li>
+								<a class="facebook" href="#">
+									<i class="fab fa-twitter"></i>
+									<span>Twitter</span>
+								</a>
+							</li>
+							<li class="mx-3">
+								<a class="facebook" href="#">
+									<i class="fab fa-google-plus-g"></i>
+									<span>Google+</span>
+								</a>
+							</li>
+							<li>
+								<a class="facebook" href="#">
+									<i class="fab fa-pinterest-p"></i>
+									<span>Pinterest</span>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="w3layouts-agile-copyrightbottom">
+					<p>
+						© @DateTime.Now.Year Asp.Net Core 6.0 Project | Tüm Hakları Saklıdır | Modified by<h6 class="text-white">Ahmet Macit</h6>
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="~/uitemplate/js/jquery-2.2.3.min.js"></script>
+	<script src="~/uitemplate/js/move-top.js"></script>
+	<script src="~/uitemplate/js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="~/uitemplate/js/jquery-2.2.3.min.js"></script>
+
+
+	<script src="~/uitemplate/js/jquery.desoslide.js"></script>
+	<script src="~/uitemplate/js/bootstrap.js"></script>
+	<script src="~/uitemplate/js/jquery.flexisel.js"></script>
+	<!-- //password-script -->
+	<!--/ start-smoth-scrolling -->
+	<script src="~/uitemplate/js/move-top.js"></script>
+	<script src="~/uitemplate/js/easing.js"></script>
+
+
 </body>
+
 </html>
+

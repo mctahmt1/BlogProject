@@ -1,4 +1,5 @@
 ﻿using BlogProject.Entity.DTOs.Categories;
+using BlogProject.Entity.DTOs.Users;
 using BlogProject.Entity.Entities;
 
 namespace BlogProject.Entity.DTOs.Articles
@@ -13,5 +14,6 @@ namespace BlogProject.Entity.DTOs.Articles
         public Image Image { get; set; }
         public string CreatedBy { get; set; }
         public bool IsDeleted { get; set; }
+        public UserDto User { get; set; }
     }
 }

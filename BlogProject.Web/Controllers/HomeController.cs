@@ -1,4 +1,5 @@
-﻿using BlogProject.Service.Services.Abstracts;
+﻿using BlogProject.Entity.Entities;
+using BlogProject.Service.Services.Abstracts;
 using BlogProject.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -16,13 +17,21 @@ namespace BlogProject.Web.Controllers
             this.articleService = articleService;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var articles = await articleService.GetAllArticlesWithCategoryNonDeletedAsync();
-            return View(articles);
-        }
+		[HttpGet]
+		public async Task<IActionResult> Index(Guid? categoryId, int currentPage = 1, int pageSize = 3, bool isAscending = false)
+		{
+			var articles = await articleService.GetAllByPagingAsync(categoryId, currentPage, pageSize, isAscending);
+			return View(articles);
+		}
+		[HttpGet]
+		public async Task<IActionResult> Search(string keyword, int currentPage = 1, int pageSize = 3, bool isAscending = false)
+		{
+			var articles = await articleService.SearchAsync(keyword, currentPage, pageSize, isAscending);
+			return View(articles);
+		}
 
-        public IActionResult Privacy()
+
+		public IActionResult Privacy()
         {
             return View();
         }
@@ -32,5 +41,22 @@ namespace BlogProject.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+		[HttpGet]
+		public PartialViewResult SubscribeMail()
+		{
+			return PartialView();
+		}
+		[HttpPost]
+		public async Task<IActionResult> SubscribeMail(NewsLatter newslatter)
+		{
+            
+            await articleService.AddNewsLatterUser(newslatter);
+			return RedirectToAction("Index", "Home");
+		}
+		public async Task<IActionResult> Detail(Guid id)
+		{
+			var article = await articleService.GetArticleWithCategoryNonDeletedAsync(id);
+			return View(article);
+		}
+	}
 }

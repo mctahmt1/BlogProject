@@ -18,5 +18,7 @@ namespace BlogProject.Service.Services.Abstracts
         Task<List<CategoryDto>> GetAllCategoriesDeleted();
         Task<string> DeleteCategoryAsync(Guid categoryId);
         Task<string> UndoDeleteCategoryAsync(Guid categoryId);
-    }
+        Task<List<CategoryDto>> GetAllCategoriesNonDeletedTake24();
+
+	}
 }

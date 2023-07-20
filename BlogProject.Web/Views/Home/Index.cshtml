@@ -1,27 +1,507 @@
-﻿@model List<ArticleDto>
-@{
-    ViewData["Title"] = "Home Page";
-}
-<h1>Default Area İçerisindesiniz</h1>
-<br />
-<br />
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-<a class="btn btn-danger btn-sm" href="/Admin">Admine git</a>
-<table>
-    @foreach(var article in Model)
-    {
-    <tr>
-        <th>Makale Başlığı</th>
-        <th>Makale İçeriği</th>
-        <th>Oluşturma Tarihi</th>
-    </tr>
-    <tr>
-            <td>@article.Title</td>
-            <td>@article.Content.Substring(0,30)</td>
-            <td>@article.CreatedDate</td>
-    </tr>
-    }
-</table>
+﻿@model ArticleListDto
+
+<head>
+	<title>Weblog a Blogging Category Bootstrap responsive WebTemplate | Home :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+</head>
+
+<body>
+	<!--/banner-->
+	<div class="banner">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active">
+					<div class="carousel-caption">
+						<h3>
+							Create the lifestyle
+							<span>you desire</span>
+						</h3>
+						<div class="read">
+							<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item2">
+					<div class="carousel-caption">
+						<h3>
+							Engaging Purposeful
+							<span>and Creative</span>
+						</h3>
+						<div class="read">
+							<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item3">
+					<div class="carousel-caption">
+						<h3>
+							Create the lifestyle
+							<span>you desire</span>
+						</h3>
+						<div class="read">
+							<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item4">
+					<div class="carousel-caption">
+						<h3>
+							Engaging Purposeful
+							<span>and Creative</span>
+						</h3>
+						<div class="read">
+							<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<!--/model-->
+	<!--//banner-->
+	<section class="bottom-slider">
+		<div class="course_demo1">
+			<ul id="flexiselDemo1">
+				<li>
+					<div class="blog-item">
+						<img src="~/uitemplate/images/1.jpg" alt=" " class="img-fluid" />
+						<button type="button" class="btn btn-primary play" data-toggle="modal" data-target="#exampleModal">
+							<i class="fas fa-play"></i>
+						</button>
+
+						<div class="floods-text">
+							<h3>
+								The fed and inequality
+								<span>
+									Blogger
+									<label>|</label>
+									<i>Adom Smith</i>
+								</span>
+							</h3>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="~/uitemplate/images/2.jpg" alt=" " class="img-fluid" />
+						<button type="button" class="btn btn-primary play" data-toggle="modal" data-target="#exampleModal">
+							<i class="fas fa-play"></i>
+						</button>
+
+						<div class="floods-text">
+							<h3>
+								The fastest insect in the world
+								<span>
+									Blogger
+									<label>|</label>
+									<i>Adom Smith</i>
+								</span>
+							</h3>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="~/uitemplate/images/3.jpg" alt=" " class="img-fluid" />
+						<button type="button" class="btn btn-primary play" data-toggle="modal" data-target="#exampleModal">
+							<i class="fas fa-play"></i>
+						</button>
+
+
+						<div class="floods-text">
+							<h3>
+								Billionaires versus Millionaires
+								<span>
+									Blogger
+									<label>|</label>
+									<i>Adom Smith</i>
+								</span>
+							</h3>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="~/uitemplate/images/4.jpg" alt=" " class="img-fluid" />
+						<button type="button" class="btn btn-primary play" data-toggle="modal" data-target="#exampleModal">
+							<i class="fas fa-play"></i>
+						</button>
+
+
+						<div class="floods-text">
+							<h3>
+								Billionaires versus Millionaires
+								<span>
+									Blogger
+									<label>|</label>
+									<i>Adom Smith</i>
+								</span>
+							</h3>
+
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="embed-responsive embed-responsive-21by9">
+							<iframe src="https://player.vimeo.com/video/145787219"></iframe>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/main-->
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+			<div class="row">
+				<!--left-->
+				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+					@foreach(var blog in Model.Articles)
+						{
+					<div class="blog-grid-top">
+						
+						<div class="b-grid-top">
+							<input type="hidden" id="keyword" value="@Model.CurrentPage"/>
+							<div class="blog_info_left_grid">
+								<a href="single.html">
+									<img src="~/uitemplate/images/b1.jpg" class="img-fluid" alt="">
+								</a>
+							</div>
+							<div class="blog-info-middle">
+								<ul>
+										<li class="mx-2">
+										<a href="#">
+											<i class="far fa-user"></i> @blog.User.FirstName @blog.User.LastName
+										</a>
+								    </li>
+										<li class="mx-2">
+										<a href="#">
+												<i class="far fa-calendar-alt"></i> @blog.CreatedDate.ToShortDateString()
+										</a>
+									</li>
+									
+										<li class="mx-2">
+										<a href="#">
+											<i class="far fa-comment"></i> 15 Comments
+										</a>
+									</li>
+										<li class="mx-2">
+											<a href="#">
+												<i class="far fa-thumbs-up"></i> @blog.Category.Name
+											</a>
+										</li>
+
+								</ul>
+							</div>
+						</div>
+						<h3>
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@blog.Id">@blog.Title</a>
+						</h3>
+						<p>
+								@(blog.Content.Length > 30 ? blog.Content.Substring(0, 150) + "..." : blog.Content)
+						</p>
+							<a asp-controller="Home" asp-action="Detail" asp-route-id="@blog.Id" class="btn btn-primary read-m">Devamını Oku</a>
+						
+					</div>
+					}
+					<!--//silder-->
+				</div>
+				<!--//left-->
+				<!--right-->
+				<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+					<div class="right-blog-info text-left">
+						<div class="tech-btm">
+							<img src="~/uitemplate/images/banner1.jpg" class="img-fluid" alt="">
+						</div>
+						<h4>Mail Bültenine Abone Olun</h4>
+						@await Html.PartialAsync("~/Views/Home/SubscribeMail.cshtml")
+						<div class="tech-btm widget_social">
+							<h4>Stay Connect</h4>
+							<ul>
+
+								<li>
+									<a class="twitter" href="#">
+										<i class="fab fa-twitter"></i>
+										<span class="count">317K</span> Twitter Followers
+									</a>
+								</li>
+								<li>
+									<a class="facebook" href="#">
+										<i class="fab fa-facebook-f"></i>
+										<span class="count">218k</span> Twitter Followers
+									</a>
+								</li>
+								<li>
+									<a class="dribble" href="#">
+										<i class="fab fa-dribbble"></i>
+
+										<span class="count">215k</span> Dribble Followers
+									</a>
+								</li>
+								<li>
+									<a class="pin" href="#">
+										<i class="fab fa-pinterest"></i>
+										<span class="count">190k</span> Pinterest Followers
+									</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="tech-btm">
+							<h4>Recent Posts</h4>
+
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="~/uitemplate/images/1.jpg" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="~/uitemplate/images/5.jpg" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018
+										</span>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="~/uitemplate/images/3.jpg" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Feb, 2018
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="~/uitemplate/images/2.jpg" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="~/uitemplate/images/4.jpg" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="~/uitemplate/images/6.jpg" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Feb, 2018
+										</span>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</aside>
+				<!--//right-->
+			</div>
+		</div>
+	</section>
+	<!--//main-->
+
+
+	<script src="~/uitemplate/js/jquery-2.2.3.min.js"></script>
+
+
+	<script src="~/uitemplate/js/jquery.desoslide.js"></script>
+	<script>
+		$('#demo1_thumbs').desoSlide({
+			main: {
+				container: '#demo1_main_image',
+				cssClass: 'img-responsive'
+			},
+			effect: 'sideFade',
+			caption: true
+		});
+	</script>
+
+	<!-- requried-jsfiles-for owl -->
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo2").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+
+
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function () {
+
+									var defaults = {
+										containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear'
+									};
+
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="~/uitemplate/js/bootstrap.js"></script>
+
+
+</body>
+

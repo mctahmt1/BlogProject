@@ -27,7 +27,28 @@ namespace BlogProject.Service.Services.Concrete
             user = accessor.HttpContext.User;
             this.imageHelper = imageHelper;
         }
+        public async Task<ArticleListDto> GetAllByPagingAsync(Guid? categoryId, int currentPage = 1, int pageSize = 3, bool isAscending = false)
+        {
+            pageSize = pageSize > 20 ? 20 : pageSize;
+            var articles = categoryId == null
+                ? await unitOfWork.GetRepository<Article>().GetAllAsync(x => !x.IsDeleted, a => a.Category, i => i.Image,a=>a.User) :
+                await unitOfWork.GetRepository<Article>().GetAllAsync(x => !x.IsDeleted, a => a.CategoryId == categoryId && !a.IsDeleted,c=> c.Category, i => i.Image,a=>a.User);
 
+            var sortedArticles = isAscending
+                ? articles.OrderBy(x => x.CreatedDate).Skip((currentPage - 1 * pageSize)).Take(pageSize).ToList() :
+                articles.OrderByDescending(x => x.CreatedDate).Skip((currentPage - 1 * pageSize)).Take(pageSize).ToList();
+            var map = mapper.Map<List<ArticleDto>>(sortedArticles);
+
+            return new ArticleListDto
+            {
+                Articles = map,
+                categoryId = categoryId == null ? null : categoryId.Value,
+                CurrentPage = currentPage,
+                PageSize = pageSize,
+                TotalCount = articles.Count,
+                IsAscending = isAscending
+            };
+		}
         public async Task CreateArticleAsync(ArticleAddDto articleAddDto)
         {
             //var userId = Guid.Parse("5CA6B261-E32D-4D26-9719-A98781F37011");
@@ -52,7 +73,7 @@ namespace BlogProject.Service.Services.Concrete
         }
         public async Task<ArticleDto> GetArticleWithCategoryNonDeletedAsync(Guid articleId)
         {
-            var article = await unitOfWork.GetRepository<Article>().GetAsync(x => !x.IsDeleted && x.Id == articleId, x => x.Category,x => x.Image);
+            var article = await unitOfWork.GetRepository<Article>().GetAsync(x => !x.IsDeleted && x.Id == articleId, x => x.Category,x => x.Image,x=>x.User);
             var map = mapper.Map<ArticleDto>(article);
             return map;
         }
@@ -125,5 +146,31 @@ namespace BlogProject.Service.Services.Concrete
             var map = mapper.Map<ArticleDto>(article);
             return map;
         }
-    }
+		public async Task AddNewsLatterUser(NewsLatter newsLatter)
+		{
+            var news = new NewsLatter(newsLatter.Mail);
+			await unitOfWork.GetRepository<NewsLatter>().AddAsync(news);
+			await unitOfWork.SaveAsync();
+		}
+		public async Task<ArticleListDto> SearchAsync(string keyword, int currentPage = 1, int pageSize = 3, bool isAscending = false)
+		{
+			pageSize = pageSize > 20 ? 20 : pageSize;
+			var articles = await unitOfWork.GetRepository<Article>().GetAllAsync(
+				a => !a.IsDeleted && (a.Title.Contains(keyword) || a.Content.Contains(keyword) || a.Category.Name.Contains(keyword)),
+			a => a.Category, i => i.Image, u => u.User);
+
+			var sortedArticles = isAscending
+				? articles.OrderBy(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList()
+				: articles.OrderByDescending(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+			var map = mapper.Map<List<ArticleDto>>(sortedArticles);
+			return new ArticleListDto
+			{
+				Articles = map,
+				CurrentPage = currentPage,
+				PageSize = pageSize,
+				TotalCount = articles.Count,
+				IsAscending = isAscending
+			};
+		}
+	}
 }

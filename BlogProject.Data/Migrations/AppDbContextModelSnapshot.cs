@@ -53,21 +53,21 @@ namespace BlogProject.Data.Migrations
                         new
                         {
                             Id = new Guid("42276a32-7d3a-47c9-8182-75e2ac90bffa"),
-                            ConcurrencyStamp = "3db1c96b-cd04-4db0-88da-dbc56271e833",
+                            ConcurrencyStamp = "a823522e-7b31-4cf1-b878-b4ee61736d67",
                             Name = "Superadmin",
                             NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
                             Id = new Guid("ab7e18a3-ea21-45b2-b7ef-1ed5e44f2911"),
-                            ConcurrencyStamp = "e3ca1b84-3caf-4a69-8c24-c3a4a550d581",
+                            ConcurrencyStamp = "841b83c3-0ff8-4dfc-b485-0496ea78903c",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = new Guid("893c5295-04cc-47df-9c95-e6470ac0aece"),
-                            ConcurrencyStamp = "838f3146-4dde-45c3-8f66-61e1a800a8b1",
+                            ConcurrencyStamp = "6bd790d3-c829-4a01-94d5-65dc801f4ee9",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -178,7 +178,7 @@ namespace BlogProject.Data.Migrations
                         {
                             Id = new Guid("5ca6b261-e32d-4d26-9719-a98781f37011"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "11d01c1c-8546-4f34-8824-07d64747f608",
+                            ConcurrencyStamp = "14d1409c-3cb1-42cf-a625-3452716ba234",
                             Email = "superadmin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Ahmet",
@@ -187,10 +187,10 @@ namespace BlogProject.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPERADMIN@GMAIL.COM",
                             NormalizedUserName = "SUPERADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHiGTnNC64Oavg9BjGxHJ4GYt25xk0HOO1IuRU7bFyLXIbwypsZi42Pmg0RUXAWfMg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMQkRoZqTg1rsD2e4LIpTACHL8QUYIehg5x5Cj0rIUAWFBBVo7pcKuidLKD+lZMTZw==",
                             PhoneNumber = "+905555555555",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "8d276f2b-a926-4702-8608-ed7509592a54",
+                            SecurityStamp = "4c873839-5c4f-44c0-a3a8-03f046b2c855",
                             TwoFactorEnabled = false,
                             UserName = "superadmin@gmail.com"
                         },
@@ -198,19 +198,19 @@ namespace BlogProject.Data.Migrations
                         {
                             Id = new Guid("c85f48cf-6974-4e26-9489-4d3da1e1505a"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7f419c92-adaf-4674-a38b-2c467af5d123",
+                            ConcurrencyStamp = "fde3fdc8-8375-4545-aabc-ad993d44bf69",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
-                            FirstName = "fhdfdf",
+                            FirstName = "asdf",
                             ImageId = new Guid("f7dfbbf2-bac9-47f6-8671-dc3d5d2085b0"),
-                            LastName = "sdfg",
+                            LastName = "dbs",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBSyyucdvOF3IBHOjVVAbNwcLZ16Nk7+0/7nxYfjshPSRL5taPLkSN8NafLP6N8KkQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIeX97VdGZPMezd7AVv0XoHidCpi8O1mukOlvH4I6rpamzZA5nSKgrD/7v7/FE2S/w==",
                             PhoneNumber = "+905555555555",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d63e1472-ad80-4034-b54c-81dd95b96278",
+                            SecurityStamp = "b2a57dea-af94-48ec-8dfe-efad20efd0e1",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         });
@@ -368,11 +368,11 @@ namespace BlogProject.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5672d54f-6135-4fc1-a596-7189e8432a37"),
+                            Id = new Guid("58493917-0b68-4c1e-a33e-8abf277f6380"),
                             CategoryId = new Guid("c7be87f1-f43b-46a5-a236-828105c960e8"),
                             Content = "Neden Uygulamalarımızı Monitoring Etmeliyiz?\r\nİlk olarak bu sorunun cevabını vererek başlayalım. Nasıl ki insanlar, sağlık durumları için periyodik olarak doktor muayenesinden geçiyorlarsa benzer mantıkla yayın sürecindeki yazılımlar içinde bu periyodik muayene kesinlikle olmazsa olmazlardandır. Nihayetinde yazılımlar da tıpkı insanlar gibi canlı bir organizmadır ve süreç içerisinde farklı sebeplerden dolayı krizler, çöküşler ve hatta ölümler yaşayabilmektedirler. Bu sebepler, bir üstteki paragrafta saydığımız birkaç hususla beraber ayriyeten kontrolsüz bellek kullanımından doğan sıkıntılar, yetersiz disk alanından kaynaklı çöküşler vs. olabilmektedirler. İşte bu tarz işlevselliği sonlandırıcı durumları yönetebilmek için öncelikle bu durumlardan haberdar olmamız gerekmektedir. Bunun için ilgili yazılımların ne durumda olduğu bilgisini veren api’lar oluşturulmalı ve bu api’ları dinleyerek bizlere görsel veri sağlayan monitoring yapıları kullanılmalıdır. Böylece anlık olarak yazılımlar üzerinde oluşabilecek durumları daha dinamik takip edebilme ve gerektiği taktirde alınması gereken aksiyonları fazla kayba ve maliyete mahal vermeksizin alabilecek fırsatı kendimize sağlamış olmalıyız.\r\n\r\nAsp.NET Core Health Check Nedir? Neden Bunu Tercih Etmeliyiz?\r\nYukarıda monitoring’in öneminden bahsettik. Eğer ki, Asp.NET Core mimarisinde bir yazılım yahut servis geliştiriyorsanız hızlı bir şekilde Health Check özelliğiyle sağlık kontrolü yapabileceğiniz bir mekanizma oluşturabilir ve bunu monitoring edebilirsiniz. Health Check mekanizması, ilgili yazılımın sağlık durumuna dair bilgi verirken bu işlemi uygulamadaki iş kuralı gereği devreye sokulmuş middleware’leri ve log mekanizmalarını tetiklemeksizin gerçekleştirmektedir. İşte bu özellik ilgili mekanizmanın etkisini kat be kat arttırmaktadır. Nihayetinde bizler bir uygulamanın ayakta olup olmadığını kontrol edebilmek için herhangi bir api’sini tetiklediğimizde Asp.NET Core mimarisinin pipeline’ı devreye girecek ve sonuç dönene kadar devreye sokulmuş olan tüm middleware’ler bir yandan tetiklenirken bir yandan da varsa log mekanizması çalışıp ilgili tabloya lüzumsuz bir kayıt eklenecektir. Oysa Asp.NET Core Health Check mekanizması sayesinde tüm middleware ve log yapıları es geçilip direkt uygulamanın sağlığı check edilecek ve duruma göre bilgi döndürülecektir. Böylece ateşi çıkmış bir çocuğun ateşini ölçmek için nasıl ki lüzumsuz yere dişlerini yahut kulaklarını kontrol etmeksizin direkt ateşini ölçüyorsak benzer mantıkla sağlık kontrolü yapılacak yazılımında farklı noktalarını tetiklemeksizin direkt sağlık kontrolünü nokta atış sağlamış oluyoruz. Muazzam değil mi?",
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 6, 21, 3, 32, 58, 276, DateTimeKind.Local).AddTicks(8474),
+                            CreatedDate = new DateTime(2023, 7, 17, 3, 33, 4, 327, DateTimeKind.Local).AddTicks(6469),
                             ImageId = new Guid("d0bf49e9-1983-4e9b-8e1f-c2bf02c95417"),
                             IsDeleted = false,
                             Title = "Asp.NET Core Deneme Makalesi",
@@ -381,11 +381,11 @@ namespace BlogProject.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6c5009f9-300b-4d71-b6b8-a51f547fe381"),
+                            Id = new Guid("fdbbfe10-5448-47dd-b98f-c4df195b9068"),
                             CategoryId = new Guid("dde199e6-19a4-4ac9-b400-16e77244088c"),
                             Content = "Asp.NET Core Health Check Nedir? Neden Bunu Tercih Etmeliyiz?\r\nYukarıda monitoring’in öneminden bahsettik. Eğer ki, Asp.NET Core mimarisinde bir yazılım yahut servis geliştiriyorsanız hızlı bir şekilde Health Check özelliğiyle sağlık kontrolü yapabileceğiniz bir mekanizma oluşturabilir ve bunu monitoring edebilirsiniz. Health Check mekanizması, ilgili yazılımın sağlık durumuna dair bilgi verirken bu işlemi uygulamadaki iş kuralı gereği devreye sokulmuş middleware’leri ve log mekanizmalarını tetiklemeksizin gerçekleştirmektedir. İşte bu özellik ilgili mekanizmanın etkisini kat be kat arttırmaktadır. Nihayetinde bizler bir uygulamanın ayakta olup olmadığını kontrol edebilmek için herhangi bir api’sini tetiklediğimizde Asp.NET Core mimarisinin pipeline’ı devreye girecek ve sonuç dönene kadar devreye sokulmuş olan tüm middleware’ler bir yandan tetiklenirken bir yandan da varsa log mekanizması çalışıp ilgili tabloya lüzumsuz bir kayıt eklenecektir. Oysa Asp.NET Core Health Check mekanizması sayesinde tüm middleware ve log yapıları es geçilip direkt uygulamanın sağlığı check edilecek ve duruma göre bilgi döndürülecektir. Böylece ateşi çıkmış bir çocuğun ateşini ölçmek için nasıl ki lüzumsuz yere dişlerini yahut kulaklarını kontrol etmeksizin direkt ateşini ölçüyorsak benzer mantıkla sağlık kontrolü yapılacak yazılımında farklı noktalarını tetiklemeksizin direkt sağlık kontrolünü nokta atış sağlamış oluyoruz. Muazzam değil mi?",
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 6, 21, 3, 32, 58, 276, DateTimeKind.Local).AddTicks(8500),
+                            CreatedDate = new DateTime(2023, 7, 17, 3, 33, 4, 327, DateTimeKind.Local).AddTicks(6484),
                             ImageId = new Guid("f7dfbbf2-bac9-47f6-8671-dc3d5d2085b0"),
                             IsDeleted = false,
                             Title = "Visual Studio Deneme Makalesi",
@@ -436,7 +436,7 @@ namespace BlogProject.Data.Migrations
                         {
                             Id = new Guid("c7be87f1-f43b-46a5-a236-828105c960e8"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 6, 21, 3, 32, 58, 276, DateTimeKind.Local).AddTicks(9560),
+                            CreatedDate = new DateTime(2023, 7, 17, 3, 33, 4, 327, DateTimeKind.Local).AddTicks(7922),
                             IsDeleted = false,
                             Name = "Asp.NET Core"
                         },
@@ -444,7 +444,7 @@ namespace BlogProject.Data.Migrations
                         {
                             Id = new Guid("dde199e6-19a4-4ac9-b400-16e77244088c"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 6, 21, 3, 32, 58, 276, DateTimeKind.Local).AddTicks(9572),
+                            CreatedDate = new DateTime(2023, 7, 17, 3, 33, 4, 327, DateTimeKind.Local).AddTicks(7961),
                             IsDeleted = false,
                             Name = "VisualStudio 2022"
                         });
@@ -492,7 +492,7 @@ namespace BlogProject.Data.Migrations
                         {
                             Id = new Guid("d0bf49e9-1983-4e9b-8e1f-c2bf02c95417"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 6, 21, 3, 32, 58, 277, DateTimeKind.Local).AddTicks(13),
+                            CreatedDate = new DateTime(2023, 7, 17, 3, 33, 4, 327, DateTimeKind.Local).AddTicks(8559),
                             FileName = "images/testimage",
                             FileType = "jpg",
                             IsDeleted = false
@@ -501,10 +501,59 @@ namespace BlogProject.Data.Migrations
                         {
                             Id = new Guid("f7dfbbf2-bac9-47f6-8671-dc3d5d2085b0"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 6, 21, 3, 32, 58, 277, DateTimeKind.Local).AddTicks(24),
+                            CreatedDate = new DateTime(2023, 7, 17, 3, 33, 4, 327, DateTimeKind.Local).AddTicks(8567),
                             FileName = "images/visualtest",
                             FileType = "png",
                             IsDeleted = false
+                        });
+                });
+
+            modelBuilder.Entity("BlogProject.Entity.Entities.NewsLatter", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("MailStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NewsLatters");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("d0bf49e9-1983-4e9b-8e1f-c2bf02c95417"),
+                            CreatedBy = "Undefined",
+                            CreatedDate = new DateTime(2023, 7, 17, 3, 33, 4, 327, DateTimeKind.Local).AddTicks(9128),
+                            IsDeleted = false,
+                            Mail = "macitahmet65@gmail.com",
+                            MailStatus = true
                         });
                 });
 
